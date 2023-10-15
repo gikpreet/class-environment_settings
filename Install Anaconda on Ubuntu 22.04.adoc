@@ -1,0 +1,132 @@
+= Install Anaconda on Windows 11
+
+== 설치 전 사전 업데이트
+
+아래 명령을 수행하여 Ubuntu 패키지 관리자를 업데이트합니다.
+
+[source, shell]
+----
+$ sudo apt update
+----
+
+== 아나콘다 패키지 다운로드
+
+아래 명령을 수행하여 Anaconda 패키지를 다운로드 합니다.
+
+[source, shell]
+----
+$ wget https://repo.anaconda.com/archive/Anaconda3-2022.05-Linux-x86_64.sh
+----
+
+아래 명령을 수행하여 다운로드 받은 Anaconda 패키지의 코드 무결성을 확인합니다.
+
+[source, shell]
+----
+$ sha256sum Anaconda3-2022.05-Linux-x86_64.sh
+----
+
+== Anaconda 패키지 설치
+
+아래 명령을 수행하여 다운로드한 Anaconda 패키지 설치를 시작합니다.
+
+[source, shell]
+----
+$ bash Anaconda3-2022.05-Linux-x86_64.sh
+----
+
+Enter 키를 눌러 설치를 계속합니다.
+
+----
+Welcome to Anaconda3 2033.05
+
+In order to continue the installation process, please review the license agreement.
+please, press ENTER to continue
+>>>
+----
+
+`Yes` 를 입력하고 Enter 키를 눌러 라이선스 계약에 동의합니다.
+
+----
+Do you accept the license terms? [yes|no]
+>>>
+----
+
+Enter 키를 눌러 설치 위치를 사용자의 HOME 디렉토리로 설정합니다.
+
+----
+Anaconda3 will now be installed into this location:
+/username/anaconda3
+
+- Press ENTER to confirm the location
+- Press CTRL-C to abort the installation
+- Or specify a different location below
+
+[/username/anaconda3] >>>
+----
+
+설치가 시작됩니다. 도중에 발생하는 물음에 yes를 입력하고 설치를 계속합니다.
+
+Anaconda 설치가 완료됩니다.
+
+----
+Thank you for installing Anaconda3!
+----
+
+== 설치 확인
+
+아래 명령을 수행하여 추가된 설정을 적용합니다.
+
+----
+$ source ~./.bashrc
+----
+
+아래 명령을 수행하여 설치된 Anaconda 정보를 확인합니다.
+
+----
+~$ conda info
+
+     active environment : base
+    active env location : /home/username/anaconda3
+            shell level : 1
+       user config file : /home/username/.condarc
+ populated config files : 
+          conda version : 22.9.0
+    conda-build version : 3.22.0
+         python version : 3.9.13.final.0
+       virtual packages : __cuda=11.4=0
+                          __linux=5.15.0=0
+                          __glibc=2.31=0
+                          __unix=0=0
+                          __archspec=1=x86_64
+       base environment : /home/username/anaconda3  (writable)
+      conda av data dir : /home/username/anaconda3/etc/conda
+  conda av metadata url : None
+           channel URLs : https://repo.anaconda.com/pkgs/main/linux-64
+                          https://repo.anaconda.com/pkgs/main/noarch
+                          https://repo.anaconda.com/pkgs/r/linux-64
+                          https://repo.anaconda.com/pkgs/r/noarch
+          package cache : /home/username/anaconda3/pkgs
+                          /home/username/.conda/pkgs
+       envs directories : /home/username/anaconda3/envs
+                          /home/username/.conda/envs
+               platform : linux-64
+             user-agent : conda/22.9.0 requests/2.28.1 CPython/3.9.13 Linux/5.15.0-84-generic ubuntu/20.04.6 glibc/2.31
+                UID:GID : 1001:1001
+             netrc file : None
+           offline mode : False
+
+----
+
+== Anaconda 업데이트
+
+아래 명령을 수행하여 conda 패키지 관리자를 업데이트 합니다.
+
+----
+$ conda update conda
+----
+
+아래 명령을 수행하여 Anaconda 배포판을 업데이트 합니다.
+
+----
+$ conda update anaconda
+----
