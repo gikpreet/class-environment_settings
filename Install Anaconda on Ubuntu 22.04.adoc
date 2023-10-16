@@ -1,4 +1,4 @@
-= Install Anaconda on Windows 11
+= Install Anaconda on Ubuntu 22.04
 
 == 설치 전 사전 업데이트
 
