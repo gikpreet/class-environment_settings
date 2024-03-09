@@ -1,4 +1,4 @@
-= Install Development Enrvironment for Java on Windows 11
+= Windows 11에서 Java 개발환경 설치
 
 == 사전 환경 확인
 
