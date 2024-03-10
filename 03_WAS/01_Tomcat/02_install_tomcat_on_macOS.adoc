@@ -1,3 +1,18 @@
 = macOS에서 Tomcat 설치
 
 이 연습에서는 macOS 에서 Tomcat Web Application Server 9 버전을 설치합니다. 아래 절차에 따릅니다.
+
+== 설치된 Java 환경 확인
+
+1. 터미널에서 아래 명령을 실행하여 설치된 Java 버전을 확인합니다.
++
+----
+% java -version
+----
++
+|===
+| **중요** Java 버전이 표시되지 않는다면, tomcat 설치의 사전 단계로 JDK를 반드시 설치해야 합니다. 아래 link의 문서를 참조하여 설치할 수 있습니다.
+
+
+|===
+2. 
