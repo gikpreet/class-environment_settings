@@ -15,7 +15,7 @@
 *** 2.2.3 LInux(Ubuntu)에서 Nginx 설치
 * 3. WAS 설치
 ** 1. Tomcat 설치
-*** 3.1.1 Windows 11에서 Tomcat 설치
+*** link:./03_WAS/01_Tomcat/01_install_tomcat_on_windows11.adoc[3.1.1 Windows 11에서 Tomcat 설치]
 *** 3.1.2 macOS에서 Tomcat 설치
 *** 3.1.3 Linux(Ubuntu)에서 Tomcat 설치
 * 4. Database Management System 설치
