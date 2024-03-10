@@ -1,6 +1,6 @@
 = Windows 11에서 Tomcat 설치
 
-이 연습에서는 Windows 11에서 Tomcat Web Application Serverㅠ 9 버전을 설치합니다. 아래 절차에 따릅니다.
+이 연습에서는 Windows 11에서 Tomcat Web Application Server 9 버전을 설치합니다. 아래 절차에 따릅니다.
 
 == 설치된 Java 환경 확인
 
