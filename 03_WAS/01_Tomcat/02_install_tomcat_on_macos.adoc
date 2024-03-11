@@ -26,6 +26,10 @@ link:./https://github.com/gikpreet/class-environment_settings/blob/main/01_JDK/0
 |===
 +
 3. 아래 명령을 실행하여 JAVA_HOME 환경 변수를 확인합니다.
++
+----
+% echo $JAVA_HOME
+----
 
 == Tomcat 9 설치
 

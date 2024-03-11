@@ -1,0 +1,54 @@
+= Linux 에서 Tomcat 설치
+
+이 연습에서는 Ubuntu 22.04 운영체제에 Tomcat Web Application Server 9 버전을 설치합니다. 아래 절차에 따릅니다.
+
+== 설치된 Java 환경 확인
+
+1. 터미널에서 아래 명령을 실행하여 설치된 Java 버전을 확인합니다.
++
+----
+% java -version
+----
++
+|===
+| **중요** Java 버전이 표시되지 않는다면, tomcat 설치의 사전 단계로 JDK를 반드시 설치해야 합니다. 아래 link의 문서를 참조하여 설치할 수 있습니다. +
+link:./https://github.com/gikpreet/class-environment_settings/blob/main/01_JDK/02_install_jdk_on_macos.adoc[macOS에서 Java 개발환경 설치]
+|===
+2. 아래 명령을 실행하여 설치된 Java 컴파일러의 버전을 확인합니다.
++
+----
+% javac -version
+----
++
+|===
+| **중요** Java 버전이 표시되지 않는다면, tomcat 설치의 사전 단계로 JDK를 반드시 설치해야 합니다. 아래 link의 문서를 참조하여 설치할 수 있습니다. +
+link:./https://github.com/gikpreet/class-environment_settings/blob/main/01_JDK/02_install_jdk_on_macos.adoc[macOS에서 Java 개발환경 설치]
+|===
++
+3. 아래 명령을 실행하여 JAVA_HOME 환경 변수를 확인합니다.
++
+----
+% echo $JAVA_HOME
+----
+
+== Tomcat 9 설치
+
+1. 터미널에서 아래 명령을 실행하여 패키지를 업데이트 합니다.
++
+----
+$ sudo apt update
+----
++
+2. 아래 명령을 실행하여 Tomcat Web Application Server를 설치합니다.
++
+----
+$ sudo apt install tomcat9
+----
++
+3. 설치가 완료되면, 아래 명령을 실행하여 Tomcat을 시작합니다.
++
+$ sudo systemctl start tomcat9
++
+4. 아래 명령을 실행하여 Tomcat의 상태를 확인합니다.
++
+

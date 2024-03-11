@@ -1,0 +1,40 @@
+= Linux(Ubuntu) 11에서 Apache 웹 서버 설치
+
+이 연습에서는 Ubuntu 22.04 운영체제에 Apache 웹 서버를 설치합니다. 아래 절차에 따릅니다.
+
+1. 터미널에서 아래 명령을 실행하여 패키지를 업데이트 합니다.
++
+----
+$ sudo apt update
+----
++
+2. 아래 명령을 실행하여 Apache 웹 서버를 설치합니다.
++
+----
+$ sudo apt install apache2
+----
++
+3. 아래 명령을 실행하여 Apache 웹 서버의 상태를 확인합니다.
++
+----
+$ sudo systemctl status apache2
+● apache2.service - The Apache HTTP Server
+     Loaded: loaded (/lib/systemd/system/apache2.service; enabled; vendor preset: enabled)
+     Active: active (running) since Wed 2024-03-06 11:20:03 KST; 59s ago
+       Docs: https://httpd.apache.org/docs/2.4/
+   Main PID: 275507 (apache2)
+      Tasks: 55 (limit: 18615)
+     Memory: 5.0M
+     CGroup: /system.slice/apache2.service
+             ├─275507 /usr/sbin/apache2 -k start
+             ├─275508 /usr/sbin/apache2 -k start
+             └─275509 /usr/sbin/apache2 -k start
+
+ 3월 06 11:20:03 Rachel systemd[1]: Starting The Apache HTTP Server...
+ 3월 06 11:20:03 Rachel apachectl[275506]: AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 1>
+ 3월 06 11:20:03 Rachel systemd[1]: Started The Apache HTTP Server.
+----
++
+4. 웹 브라우저를 실행하고 주소창에 http://localhost를 입력하고 이동하여 Apache 웹 서버의 실행을 확인합니다.
++
+image:../images/image07.png[width=600]
