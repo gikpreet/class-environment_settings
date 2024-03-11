@@ -47,8 +47,33 @@ $ sudo apt install tomcat9
 +
 3. 설치가 완료되면, 아래 명령을 실행하여 Tomcat을 시작합니다.
 +
+----
 $ sudo systemctl start tomcat9
+----
 +
 4. 아래 명령을 실행하여 Tomcat의 상태를 확인합니다.
 +
+----
+$ systemctl status tomcat9
+----
++
+5. 만약 아래와 같은 상태가 표시되며 Tomcat이 시작되지 않는 경우, 아래 조치를 취합니다.
+a. /etc/default/tomcat9 파일을 관리자 모드로 엽니다.
++
+----
+$ sudo /etc/default/tomcat9
+----
++
+b. 첫 번째 줄에서 아래와 같이 JAVA_HOME을 설정합니다.
++
+----
+JAVA_HOME=<$JAVA_HOME 환경변수 값>/bin
+----
++
+c. 아래는 예입니다.
++
+----
+JAVA_HOME=JAVA_HOME=/usr/lib/jvm/temurin-17-jdk-amd64/bin
++
+6. 
 
