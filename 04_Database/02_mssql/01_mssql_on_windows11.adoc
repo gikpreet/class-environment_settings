@@ -1,0 +1,1 @@
+= Windows 11에서 Microsoft SQL Server 설치
