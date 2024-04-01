@@ -131,7 +131,7 @@ $ /opt/mssql-tools18/bin/sqlcmd -U sa -C
 +
 [source, sql]
 ----
-SELECT * FROM Sys.databases
+SELECT * FROM sys.databases
 GO
 ----
 +

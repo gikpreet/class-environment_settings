@@ -1,1 +1,47 @@
-= Docker에서 Microsoft SQL Server 설치
+= Docker에서 Microsoft SQL Server 실행
+
+1. 터미널(또는 명령 프롬프트)를 실행합니다.
+2. 아래 명령을 실행하여 Microsoft SQL Server 2022 for Linux 이미지를 다운로드 합니다.
++
+----
+$ docker pull mcr.microsoft.com/mssql/server:2022-latest
+----
+3. 아래 명령을 실행하여 다운로드 한 docker 이미지를 확인합니다.
++
+----
+$ docker images
+----
++
+4. 아래 명령을 실행하여 Microsoft SQL Server 2022 이미지를 실행합니다.
++
+----
+$ docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=P@ssw0rd" -p 1433:1433 --name mssql2022 -d mcr.microsoft.com/mssql/server:2022-latest
+----
+5. 아래 명령을 실행하여 실행중인 docker 이미지를 확인합니다.
++
+----
+$ docker ps
+----
++
+6. 실행중인 Microsoft SQL Server 컨테이너를 확인하고, 아래 명령을 실행하여 container에 접속합니다.
++
+$ docker exec -it mssql2022 bash
++
+7. 아래 명령을 실행하여 /opt 디렉토리의 폴더를 확인합니다. 이동합니다.
++
+$ ls /opt
++
+8. mssql-tools 폴더를 확인합니다. 만약 mssql-tools 디렉토리가 존재하지 않으면 아래 명령을 실행하여 mssql 도구를 설치합니다.
++ 
+$ sudo ACCEPT_EULA=Y apt-get install mssql-tools18 unixodbc-dev
++
+9. 아래 명령을 실행하여 sqlcmd 를 실행하고 Microsoft SQL Server에 접속합니다.
++
+$ /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P P@ssw0rd
++
+10. sqlcmd 프롬프트에서 아래 명령을 실행하고 결과를 확인합니다.
+[source, sql]
+----
+1> SELECT @@VERSION
+GO
+----

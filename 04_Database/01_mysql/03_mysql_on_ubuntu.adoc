@@ -1,4 +1,4 @@
-= Linux(Ubuntu) macOS에서 MySQL 설치
+= Linux(Ubuntu)에서 MySQL 설치
 
 == MySQL Server 설치
 
