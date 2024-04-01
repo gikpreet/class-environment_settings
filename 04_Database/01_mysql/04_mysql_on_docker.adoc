@@ -18,32 +18,60 @@ $ docker images
 ----
 $ docker run --name mysql82 -e "MYSQL_ROOT_PASSWORD=P@ssw0rd" -p 3306:3306 -d mysql:latest
 ----
-
-5. 아래 명령을 실행하여 컨테이너에 액세스 합니다.
++
+5. 아래 명령을 실행하여 컨테이너를 확인합니다.
++
+----
+$ docker ps 
+----
++
+6. 아래 명령을 실행하여 컨테이너에 액세스 합니다.
 +
 ----
 $ docker exec -it mysql82 mysql -u root -p
+Enter password:
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 9
+Server version: 8.3.0 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2024, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql>
 ----
-6. 연결된 MySQL에서, 아래 명령을 실행하여 test 데이터베이스를 생성합니다.
++
+7. 연결된 MySQL에서, 아래 명령을 실행하여 test 데이터베이스를 생성합니다.
 +
 ----
 mysql> create database mysqltest;
 ----
 +
-7. DBeaver를 실행하고 왼쪽 위의 **새 데이터베이스 연결** 버튼을 클릭합니다.
-8. **select your database** 창에서, MySQL을 선택하고 **다음** 버튼을 클릭합니다.
-9. **DB 연결 설정** 창에서 아래와 같이 정보를 입력하고 **완료** 버튼을 클릭합니다.
+8. MySQL Workbench를 실행하고 MySQL Workbench를 실행하고 MySQL Connections 옆의 + 아이콘을 클릭합니다.
 +
-image:./images/image08.png[]
+image:../images/image30.png[width=550]
 +
-    a. Connect by: **Host**
-    b. Server Host: **localhost**
-    c. Database: **mysqltest**
-    d. Password: **P@ssw0rd**
+9.	아래와 같이 연결 정보를 입력하고 OK 버튼을 클릭합니다.
+A.	Connection Name: `localhost`
+B.	Connection Method: `Standard (TCP/IP)`
+C.	Hostname: `127.0.0;1`
+D.	Port: `3306`
+E.	Username: `root`
 +
-10. 메뉴바에서 **SQL 편집기 열기** 버튼을 클릭하여 새 SQL 편집기를 엽니다.
-11. 아래 질의를 실행하여 테이블을 확인합니다.
+image:../images/image31.png[width=550]
 +
-----
-show tables;
-----
+10. Welcome 페이지에서 생성된 Connection 패널을 클릭합니다.
++
+image:../images/image32.png[width=550]
++
+11. Connection to MySQL Server 창에서 패스워드를 입력하고 OK 버튼을 클릭합니다.
++
+image:../images/image33.png[width=400]
++
+12. 연결을 확인합니다.
++
+image:../images/image34.png[width=550]
