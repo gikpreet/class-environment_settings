@@ -52,7 +52,7 @@ sudo apt install pgadmin4
 3. Applications 메뉴에서 pgAdmin을 검색하여 실행합니다.
 4. pgAdmin이 실행되면, Add New Server를 클릭합니다.
 +
-image:./images/image02.png[]
+image:../images/image36.png[width=600]
 +
 5. Register-Server 창에서, 아래와 같이 정보를 입력하고 Save 버튼을 클릭합니다.
 * General 탭의 Name: localhost
@@ -60,4 +60,4 @@ image:./images/image02.png[]
 * Connection 탭의 Password: <설치시 지정한 패스워드>
 6. Object Explorer 탭에서 PostgreSQL 데이터베이스 연결을 확인합니다.
 +
-image:./images/image03.png[]
+image:../images/image37.png[width=600]

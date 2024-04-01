@@ -1,0 +1,54 @@
+== Docker에서 PostgreSQL 실행
+
+1. 터미널(또는 명령 프롬프트)를 실행합니다.
+2. 아래 명령을 실행하여 PostgreSQL 이미지를 다운로드 합니다.
++
+----
+$ docker pull postgres
+----
+3. 아래 명령을 실행하여 다운로드 한 docker 이미지를 확인합니다.
++
+----
+$ docker images
+----
++
+4. 아래 명령을 실행하여 PostgreSQL 컨테이너를 실행합니다.
++
+----
+$ docker run -e "POSTGRES_PASSWORD=P@ssw0rd" -p 5432:5432 --name postgres -d postgres:latest
+----
+5. 아래 명령을 실행하여 실행중인 docker 컨테이너를 확인합니다.
++
+----
+$ docker ps
+----
++
+6. 아래 명령을 실행하여 실행중인 컨테이너에 접속합니다.
++
+----
+$ docker exec -it postgres bash
+----
++
+7. 아래 명령을 실행하여 postgres DBMS에 액세스 합니다.
++
+----
+# psql -U postgres
+----
++
+8. 아래 질의를 실행하여 test 데이터베이스를 생성합니다.
++
+----
+postgres=# create database pgtest;
+----
++
+9. 아래 명령을 실행하여 데이터베이스 연결을 test 데이터베이스로 변경합니다.
++
+----
+\c pgtest
+----
++
+10. 아래 명령을 실행하여 현재 데이터베이스를 확인합니다.
++
+----
+test=# select current_database();
+----
