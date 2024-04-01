@@ -19,9 +19,9 @@
 *** link:./03_WAS/01_tomcat/03_install_tomcat_on_linux.adoc[3.1.3 Linux(Ubuntu)에서 Tomcat 설치]
 * 4. Database Management System 설치
 ** 1. MySQL 설치
-*** 4.1.1 Windows 11에서 MySQL 설치
-*** 4.1.2 macOS에서 MySQL 설치
-*** 4.1.3 Linux(Ubuntu)에서 MySQL 설치
+*** link:./04_Database/01_mysql/01_mysql_on_windows11.adoc[4.1.1 Windows 11에서 MySQL 설치]
+*** link:./04_Database/01_mysql/02_mysql_on_macos.adoc[4.1.2 macOS에서 MySQL 설치]
+*** link:./04_Database/02_mysql/03_mysql_on_ubuntu8.adoc[4.1.3 Linux(Ubuntu)에서 MySQL 설치]
 ** 2. Microsoft SQL Server 설치
 *** 4.2.1 Windows 11에서 Microsoft SQL Server 설치
 *** 4.2.2 Linux(Ubuntu)에서 Microsoft SQL Server 설치

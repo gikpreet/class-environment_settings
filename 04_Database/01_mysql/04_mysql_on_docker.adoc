@@ -1,0 +1,49 @@
+== Docker에서 MySQL 실행
+
+1. 터미널(또는 명령 프롬프트)를 실행합니다.
+2. 아래 명령을 실행하여 MySQL 이미지를 다운로드 합니다.
++
+----
+$ docker pull mysql
+----
++
+3. 아래 명령을 실행하여 다운로드한 docker 이미지를 확인합니다.
++
+----
+$ docker images
+----
++
+4. 아래 명령을 실행하여 MySQL 컨테이너를 실행합니다.
++
+----
+$ docker run --name mysql82 -e "MYSQL_ROOT_PASSWORD=P@ssw0rd" -p 3306:3306 -d mysql:latest
+----
+
+5. 아래 명령을 실행하여 컨테이너에 액세스 합니다.
++
+----
+$ docker exec -it mysql82 mysql -u root -p
+----
+6. 연결된 MySQL에서, 아래 명령을 실행하여 test 데이터베이스를 생성합니다.
++
+----
+mysql> create database mysqltest;
+----
++
+7. DBeaver를 실행하고 왼쪽 위의 **새 데이터베이스 연결** 버튼을 클릭합니다.
+8. **select your database** 창에서, MySQL을 선택하고 **다음** 버튼을 클릭합니다.
+9. **DB 연결 설정** 창에서 아래와 같이 정보를 입력하고 **완료** 버튼을 클릭합니다.
++
+image:./images/image08.png[]
++
+    a. Connect by: **Host**
+    b. Server Host: **localhost**
+    c. Database: **mysqltest**
+    d. Password: **P@ssw0rd**
++
+10. 메뉴바에서 **SQL 편집기 열기** 버튼을 클릭하여 새 SQL 편집기를 엽니다.
+11. 아래 질의를 실행하여 테이블을 확인합니다.
++
+----
+show tables;
+----
