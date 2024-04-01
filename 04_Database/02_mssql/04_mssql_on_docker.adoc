@@ -48,6 +48,7 @@ $ /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P P@ssw0rd
 ----
 +
 10. sqlcmd 프롬프트에서 아래 명령을 실행하고 결과를 확인합니다.
++
 [source, sql]
 ----
 1> SELECT @@VERSION
