@@ -11,7 +11,7 @@
 % brew -v
 ----
 +
-image:../images/image08.png[]
+image:../images/image22.png[width=600]
 +
 3. homerew가 설치되어 있지 않으면, 아래 명령을 실행하여 homebrew를 설치합니다.
 +
@@ -23,21 +23,21 @@ image:../images/image08.png[]
 
 == MySQL Server 설치
 
-. homebrew가 설치된 터미널에서 아래 명령을 실행합니다.
+1. homebrew가 설치된 터미널에서 아래 명령을 실행합니다.
 +
 ----
 % brew install mysql
 ----
 +
-image:../images/image09.png[]
+image:../images/image23.png[width=600]
 +
-. 아래 명령을 실행하여 MySQL을 시작합니다.
+2. 아래 명령을 실행하여 MySQL을 시작합니다.
 +
 ----
 % mysql.server start
 ----
 +
-. 아래 명령을 실행하여 기본 설정을 시작합니다.
+3. 아래 명령을 실행하여 기본 설정을 시작합니다.
 +
 ----
 % mysql_secure_installation
@@ -45,31 +45,35 @@ image:../images/image09.png[]
 +
 명령이 실행되면, MySQL 데이터베이스에 대한 기본 설정과 관련된 응답이 요구됩니다. 순서대로 설정합니다.
 +
-A. 비밀번호 복잡도 요구사항을 물어봅니다. N을 입력하고 엔터키를 누릅니다.
+4. 비밀번호 복잡도 요구사항을 물어봅니다. N을 입력하고 엔터키를 누릅니다.
 +
-image:../images/image10.png[]
+image:../images/image24.png[width=600]
 +
-B.	root 사용자의 패스워드를 지정합니다.
+5. root 사용자의 패스워드를 지정합니다.
 +
-image:../images/image11.png[]
+image:../images/image25.png[width=450]
 +
-C. 익명 사용자를 삭제할 것인지 여부를 물어봅니다. Y를 입력하고 엔터키를 누릅니다.
+6. 익명 사용자를 삭제할 것인지 여부를 물어봅니다. Y를 입력하고 엔터키를 누릅니다.
 +
-image:../images/image12.png[]
+image:../images/image26.png[width=500]
 +
-D. Root 사용자의 원격 접속을 허용하지 않을 것인지 여부를 물어봅니다. Y를 입력하고 엔터키를 누릅니다.
+7. Root 사용자의 원격 접속을 허용하지 않을 것인지 여부를 물어봅니다. Y를 입력하고 엔터키를 누릅니다.
 +
-image:../images/image13.png[]
+image:../images/image27.png[width=540]
 +
-E. test 데이터베이스를 삭제할 것인지 물어봅니다. N을 입력하고 엔터키를 누릅니다.
+8. test 데이터베이스를 삭제할 것인지 물어봅니다. N을 입력하고 엔터키를 누릅니다.
 +
-image:../images/image14.png[]
+image:../images/image28.png[]
 +
-F. prefilege 테이블을 다시 로드할 것인지 물어봅니다. Y를 입력하고 엔터키를 누릅니다. 설정이 완료됩니다.
-image:../images/image15.png[]
+9. priviledge 테이블을 다시 로드할 것인지 물어봅니다. Y를 입력하고 엔터키를 누릅니다. 설정이 완료됩니다.
 +
-. 다음 명령을 실행하여 mysql 서비스가 실행중인지 확인합니다.
+image:../images/image29.png[]
++
+10. 다음 명령을 실행하여 mysql 서비스가 실행중인지 확인합니다.
 +
 ----
 % mysql.server status
 ----
++
+11. 터미널을 재시작합니다.
+12. 아래 명령을 실행하여 mysql 서버에 접속합니다.
