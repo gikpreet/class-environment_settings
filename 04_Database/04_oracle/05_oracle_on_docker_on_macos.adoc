@@ -1,1 +1,27 @@
 = macOS에서 Colima와 Docker를 사용한 Oracle 실행
+
+== Colima 설치
+
+1. 아래 명령을 실행하여 colima를 설치합니다.
++
+----
+% brew install colima
+----
++
+2. 설치가 완료되면, 아래 명령을 실행하여 x86_x64 환경으로 실행합니다.
++
+----
+% colima start --memory 4 --arch x86_64
+----
++
+3. colima가 실행되면, 아래 명령을 실행하여 oracle xe 11g 이미지를 다운로드합니다.
++
+----
+% docker pull jaspeen/oracle-xe-11g
+----
++
+4. 아래 명령을 실행하여 Oracle 컨테이너를 실행합니다.
++
+----
+% docker run --name oracle11g -d -p 1521:1521 jaspeen/oracle-xe-11g
+----
