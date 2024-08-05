@@ -44,7 +44,7 @@ $ sudo ACCEPT_EULA=Y apt-get install mssql-tools18 unixodbc-dev
 9. 아래 명령을 실행하여 sqlcmd 를 실행하고 Microsoft SQL Server에 접속합니다.
 +
 ----
-$ /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P P@ssw0rd
+$ /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P P@ssw0rd -C
 ----
 +
 10. sqlcmd 프롬프트에서 아래 명령을 실행하고 결과를 확인합니다.
