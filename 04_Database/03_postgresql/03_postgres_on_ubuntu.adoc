@@ -30,7 +30,6 @@ $ systemctl status postgresql
 $ sudo -i -u postgres
 $ psql
 ----
-+
 
 === pgAdmin 설치
 
