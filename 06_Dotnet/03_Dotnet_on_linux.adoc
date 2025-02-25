@@ -1,0 +1,28 @@
+= Linux(Ubuntu)에서 .NET 환경 설치
+
+Ubuntu 패키지 관리자 피드에서 .NET을 사용할 수 있습니다. Microsoft 패키지 리포지토리에는 더 이상 Ubuntu용 .NET 패키지가 포함되어 있지 않습니다.
+
+1. 터미널을 실행합니다.
+2. 아래 명령을 실행하여 .NET 리포지토리를 추가합니다.
++
+----
+sudo add-apt-repository ppa:dotnet/backports
+----
++
+3. 아래 명령을 실행하여 apt를 업데이트 합니다.
++
+----
+sudo apt-get update
+----
++
+4. 아래 명령을 실행하여 .NET SDK를 설치합니다.
++
+----
+sudo apt-get install -y dotnet-sdk-9.0
+----
++
+5. 아래 명령을 실행하여 설치된 .NET의 버전을 확인합니다.
++
+----
+dotnet --version
+----
