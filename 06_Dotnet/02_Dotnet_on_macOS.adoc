@@ -13,7 +13,7 @@ dotnet     dotnet-sdk      dotnet-sdk@preview
 3. 아래 명령을 실행하여 .NET SDK를 설치합니다.
 +
 ----
-brew-install --cask dotnet-sdk
+brew -install --cask dotnet-sdk
 ----
 +
 4. 설치가 완료되면, 아래 명령을 실행하여 설치된 .NET의 버전을 확인합니다.
