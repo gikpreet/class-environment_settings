@@ -1,3 +1,23 @@
- = macOS에서 .NET 환경 설치
+= macOS에서 .NET 환경 설치
 
- 
+Homebrew를 사용하여 macOS에 .NET을 설치할 수 있습니다. 
+
+1. 터미널을 실행합니다.
+2. 터미널에서 아래 명령을 실행하여 .NET을 검색합니다.
++
+----
+brew search dotnet-sdk
+dotnet     dotnet-sdk      dotnet-sdk@preview
+----
++
+3. 아래 명령을 실행하여 .NET SDK를 설치합니다.
++
+----
+brew-install --cask dotnet-sdk
+----
++
+4. 설치가 완료되면, 아래 명령을 실행하여 설치된 .NET의 버전을 확인합니다.
++
+----
+dotnet --version
+----
