@@ -43,6 +43,6 @@
 *** link:./02_anaconda_macos.adoc[5.1.2 macOS에서 Anaconda 설치]
 *** link:./03_anaconda_ubuntu_2204..adoc[5.1.3 Linux(Ubuntu)애서 Anaconda 설치]
 * 6. .NET 환경 설치
-** link:./06_Dotnet_windows11.adoc[6.1 Windows 11에서 .NET 환경 설치]
-** link:./06_Dotnet_macOS.adoc[6.2 macOS에서 .NET 환경 설치]
+** link:./06_Dotnet/01_Dotnet_on_windows.adoc[6.1 Windows 11에서 .NET 환경 설치]
+** link:./06_Dotnet/02_Dotnet_on_macOS.adoc[6.2 macOS에서 .NET 환경 설치]
 ** link:./06_Dotnet/03_dotnet_on_linux.adoc[6.3 Linux(Ubuntu)에서 .NET 환경 설치]
