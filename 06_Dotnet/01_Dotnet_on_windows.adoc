@@ -1,2 +1,22 @@
 = Windows에서 .NET 설치
 
+Windows 패키지 관리자(winget)을 사용하여 Windows에 .NET을 설치할 수 있습니다.
+
+1. 터미널을 실행합니다.
+2. 터미널에서 아래 명령을 실행하여 .NET SDK를 검색합니다.
++
+----
+winget search ".NET SDK"
+----
++
+3. 아래 명령을 실행하여 .NET SDK를 설치합니다.
++
+----
+winget install --id Microsoft.DotNet.SDK.9 -e
+----
++
+4. 아래 명령을 실행하여 설치된 .NET의 버전을 확인합니다.
++
+----
+dotnet --version
+----
