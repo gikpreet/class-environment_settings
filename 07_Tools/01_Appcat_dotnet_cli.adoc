@@ -1,0 +1,25 @@
+= APPCAT - .NET CLI
+
+Dotnet과 Visual Studio를 설치한 후, 명령 프롬프트에서 설치할 수 있습니다.
+
+* 필요한 소프트웨어
+** .NET SDK
+** Visual Studio 2022
+
+* tool을 설치하기 위해 명령 프롬프트(터미널)에서 아래 명령을 실행합니다.
++
+----
+dotnet tool install dotnet-appcat --global
+----
+
+* 설치된 CLI 도구를 업데이트하려면 명령 프롬프트(터미널)에서 아래 명령을 실행합니다.
++
+----
+dotnet tool update dotnet-appcat --global
+----
+
+* 설치에 실패할 경우, 추가 NuGet 피트 소스를 구성했을 수 있습니다. 이 경우 **--ignore-failed-sources** 파라미터를 사용하여 설차합니다.
++
+----
+dotnet tool install -g --ignore-failed-sources dotnet-appcat
+----
