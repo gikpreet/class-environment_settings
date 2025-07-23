@@ -23,3 +23,9 @@ dotnet tool update dotnet-appcat --global
 ----
 dotnet tool install -g --ignore-failed-sources dotnet-appcat
 ----
+
+== 실행
+
+----
+appcat analyze
+----
