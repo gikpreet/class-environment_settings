@@ -1,0 +1,120 @@
+= Rocky Linux 9에서 docker 설치
+
+== 패키지 업데이트
+
+아래 명령을 순서대로 실행하여 패키지를 업데이트하고 기본 패키지를 설치합니다.
+
+----
+sudo dnf update
+sudo dnf upgrade
+sudo dnf group install "base"
+----
+
+== Docker 저장소 추가
+
+아래 명령을 순서대로 실행하여 Docker 공식 저장소를 시스템에 추가합니다.
+
+----
+sudo dnf check-update
+sudo dnf config-manager –add-repo https://download.docker.com/linux/centos/docker-ce.repo
+----
+
+== Rocky Linux에 Docker 설치
+
+아래 명령을 실행하여 Docker를 설치합니다.
+
+----
+dnf install -y docker-ce docker-ce-cli containerd.io
+----
+
+== 설치 확인
+
+아래 명령을 실행하여 설치된 Docker를 확인합니다.
+
+----
+sudo dnf list installed | grep docker
+----
+
+----
+containerd.io.x86_64                             1.7.27-3.1.el9                      @docker-ce-stable
+docker-buildx-plugin.x86_64                      0.26.1-1.el9                        @docker-ce-stable
+docker-ce.x86_64                                 3:28.3.3-1.el9                      @docker-ce-stable
+docker-ce-cli.x86_64                             1:28.3.3-1.el9                      @docker-ce-stable
+docker-ce-rootless-extras.x86_64                 28.3.3-1.el9                        @docker-ce-stable
+docker-compose-plugin.x86_64                     2.39.1-1.el9                        @docker-ce-stable
+----
+
+== Docker 서비스 시작
+
+아래 명령을 실행하여 Docker 서비스를 시작합니다.
+
+----
+systemctl docker start
+----
+
+== 버전 확인
+
+아래 명령을 실행하여 Docker 버전을 확인합니다.
+
+----
+sudo docker version
+----
+----
+Client: Docker Engine - Community
+ Version:           28.3.3
+ API version:       1.51
+ Go version:        go1.24.5
+ Git commit:        980b856
+ Built:             Fri Jul 25 11:37:02 2025
+ OS/Arch:           linux/amd64
+ Context:           default
+
+Server: Docker Engine - Community
+ Engine:
+  Version:          28.3.3
+  API version:      1.51 (minimum version 1.24)
+  Go version:       go1.24.5
+  Git commit:       bea959c
+  Built:            Fri Jul 25 11:33:59 2025
+  OS/Arch:          linux/amd64
+  Experimental:     false
+ containerd:
+  Version:          1.7.27
+  GitCommit:        05044ec0a9a75232cad458027ca83437aae3f4da
+ runc:
+  Version:          1.2.5
+  GitCommit:        v1.2.5-0-g59923ef
+ docker-init:
+  Version:          0.19.0
+  GitCommit:        de40ad0
+----
+
+== Docker 데몬 상태 확인
+
+아래 명령을 실행하여 Docker 데몬의 상태를 확인합니다.
+
+----
+sudo systemctl status docker
+----
+
+----
+● docker.service - Docker Application Container Engine
+     Loaded: loaded (/usr/lib/systemd/system/docker.service; disabled; preset: disabled)
+     Active: active (running) since Tue 2025-08-12 04:25:28 EDT; 1min 42s ago
+TriggeredBy: ● docker.socket
+       Docs: https://docs.docker.com
+   Main PID: 67948 (dockerd)
+      Tasks: 10
+     Memory: 24.2M
+        CPU: 141ms
+     CGroup: /system.slice/docker.service
+             └─67948 /usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock
+----
+
+== 시스템 시작시 Docker가 d자동으로 시작되도록 설정
+
+아래 명령을 실행하여 시스템 시작시 Docker가 d자동으로 시작되도록 설정합닏다.
+
+----
+sudo systemctl enable docker
+----
