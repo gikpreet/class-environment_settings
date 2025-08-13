@@ -52,3 +52,49 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin 
 ----
 sudo docker version
 ----
+
+== Docker 데몬 상태 확인
+
+아래 명령을 실행하여 Docker 데몬의 상태를 확인합니다.
+
+----
+sudo systemctl status docker
+----
+
+----
+● docker.service - Docker Application Container Engine
+     Loaded: loaded (/usr/lib/systemd/system/docker.service; disabled; preset: disabled)
+     Active: active (running) since Tue 2025-08-12 04:25:28 EDT; 1min 42s ago
+TriggeredBy: ● docker.socket
+       Docs: https://docs.docker.com
+   Main PID: 67948 (dockerd)
+      Tasks: 10
+     Memory: 24.2M
+        CPU: 141ms
+     CGroup: /system.slice/docker.service
+             └─67948 /usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock
+----
+
+== 시스템 시작시 Docker가 자동으로 시작되도록 설정
+
+아래 명령을 실행하여 시스템 시작시 Docker가 자동으로 시작되도록 설정합닏다.
+
+----
+sudo systemctl enable docker
+----
+
+== [Optional] sudo 없이 Docker를 사용하도록 실행
+
+아래 절차를 따르면 sudo(super-user do) 없이 docker 명령어들을 실행할 수 있습니다. 이 단계를 수행하지 않으면 docker 명령을 실행할 때 반드시 sudo를 사용해야 합니다. sudo 없이 docker 명령을 사욯하려면 아래 단계에 따릅니다.
+
+1. 아래 명령을 실행하여 docker 그룹에 현재 사용자를 추가합니다.
++
+----
+sudo usermod -aG docker $USER
+----
++
+2. 그룹에 대한 변경사항을 활성화합니다.
++
+----
+newgrp docker
+----
