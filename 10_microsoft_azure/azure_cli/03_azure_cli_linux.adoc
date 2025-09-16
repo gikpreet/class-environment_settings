@@ -41,4 +41,122 @@ az version
 
 == RHEL 계열 Linux(RHEL, CentOS, Rocky Linux 등)에서 설치
 
-RHEL 계열의 Linux에서는 현재(2025년 9월) 설치 스크립트가 제공되지 않습니다. 아래 절차로 설치할 수 있습니다.
+RHEL 계열의 Linux에서는 현재(2025년 9월) 전용 설치 스크립트가 제공되지 않습니다. 아래 절차로 설치할 수 있습니다.
+
+1. 터미널을 실행합니다.
+2. 아래 명령을 실행하여 Microsoft 리포지토리를 가져옵니다.
++
+RHEL 10 및 CentOS Stream 10의 경우 아래 명령을 실행합니다.
++
+----
+sudo rpm --import https://packages.microsoft.com/keys/microsoft-2025.asc
+----
+RHEL 10, CentOS Stream 10의 하위 버전인 경우(Rocky Linux 9도 해당) 아래 명령을 실행합니다.
++
+----
+sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
+----
++
+3. 아래 명령을 실행하여 packages-microsoft-com-prod 리포지토리를 추가합니다.
++
+RHEL 10의 경우 아래 명령을 실행합니다.
++
+----
+sudo dnf install -y https://packages.microsoft.com/config/rhel/10/packages-microsoft-prod.rpm
+----
++
+CentOS Stream 10의 경우 아래 명령을 실행합니다.
++
+----
+sudo dnf install -y https://packages.microsoft.com/config/centos/10/packages-microsoft-prod.rpm
+----
++
+RHEL 9, CentOS Stream 9, Rocky Linux 9의 경우 아래 명령을 실행합니다.
++
+----
+sudo dnf install -y https://packages.microsoft.com/config/rhel/9.0/packages-microsoft-prod.rpm
+----
++
+RHEL 8의 경우 아래 명령을 실행합니다.
++
+----
+sudo dnf install -y https://packages.microsoft.com/config/rhel/8/packages-microsoft-prod.rpm
+----
++
+RHEL 7의 경우 아래 명령을 실행합니다.
++
+----
+echo -e "[azure-cli]
+name=Azure CLI
+baseurl=https://packages.microsoft.com/yumrepos/azure-cli
+enabled=1
+gpgcheck=1
+gpgkey=https://packages.microsoft.com/keys/microsoft.asc" | sudo tee /etc/yum.repos.d/azure-cli.repo
+----
++
+4. 아래 명령을 실행하여 Azure CLI를 설치합니다.
++
+----
+sudo dnf install azure-cli
+----
+5. 설치가 완료되면, 터미널을 닫습니다.
+
+== 설치 확인
+
+1. 터미널을 시작합니다.
+2. 아래 명령을 실행하여 설치된 Azure CLI 버전을 확인합니다.
++
+----
+az version
+----
++
+3. 결과는 아래와 유사할 것입니다.
++
+----
+{
+  "azure-cli": "2.77.0",
+  "azure-cli-core": "2.77.0",
+  "azure-cli-telemetry": "1.1.0",
+  "extensions": {}
+}
+----
++
+4. 아래 명령을 실행하여 Azure에 CLI를 통해 로그인을 시도합니다.
++
+----
+az login
+----
++
+5. 웹 브라우저에서 로그인 창이 열리면, 계정을 입력하고 로그인을 완료합니다.
++
+image:./images/image06.png[width=400]
++
+6. 로그인에 성공하면, 번호를 입력하여 구독(subscription)을 선택합니다.
++
+----
+Select the account you want to log in with. For more information on login with Azure CLI, see https://go.microsoft.com/fwlink/?linkid=2271136
+
+Retrieving tenants and subscriptions for the selection...
+
+[Tenant and subscription selection]
+
+No     Subscription name    Subscription ID                       Tenant
+-----  -------------------  ------------------------------------  -------------
+[1] *  Test subscription    079530c9-e0c4-40da-9c91-827e31795fba  기본 디렉터리
+
+The default is marked with an *; the default tenant is '기본 디렉터리' and subscription is 'Test subscription' (079530c9-e0c4-40da-9c91-827e31795fba).
+
+Select a subscription and tenant (Type a number or Enter for no changes):
+----
++
+7. 아래 명령을 실행하여 구독에 생성되어 있는 리소스 그룹의 목록을 확인합니다.
++
+----
+az group list
+----
++
+8. 아래 명령을 실행하여 로그아웃 합니다.
++
+----
+az logout
+----
