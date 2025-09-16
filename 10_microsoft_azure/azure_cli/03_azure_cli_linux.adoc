@@ -1,0 +1,44 @@
+= Linux에 Azure CLI 설치
+:toc:
+
+이 문서에서는 Linux(Ubuntu 및 Rocky Linux 등)에 Azure CLI(Command Line Interface)를 설치하는 방법을 설명합니다. 
+
+== Microsoft에서 제공하는 스크립트 사용
+
+Linux에서 Azure CLI를 설치하는 가장 쉬운 방법은 Microsoft의 Azure CLI 팀에서 유지 관리하는 스크립트를 사용하는 것입니다. 이 스크립트는 모든 설치 명령을 한 단계로 실행합니다. 설치 스크립트를 사용하기 위해서는 아래와 같은 소프트웨어가 필요합니다.
+
+* Python 3.8.x, 3.9.x, 3.10.x - 자세한 내용은 지원 수명 주기 - Python 종속성을 참조 하세요.
+* libffi
+* OpenSSL 1.0.2
+
+=== Debain 계열 Linux(Ubuntu 등)에서 스크립트를 사용한 Azure CLI 설치
+
+아래와 같은 절차로 Microsoft에서 제공하는 스크립트를 사용하여 설치할 수 있습니다.
+
+1. 터미널을 실행합니다.
+2. 아래 명령을 실행하여 Azure CLI를 설치합니다. 아래 명령은 curl을 통해 설치 스크립트를 다운로드 하고 스크립트를 bash에 파이프하여 설치를 실행합니다.
++
+----
+curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
+----
++
+3. 설치가 완료되면, 아래 명령을 실행하여 설치된 Azure CLI의 버전을 확인합니다.
++
+----
+az version
+----
++
+4. 결과는 아래와 유사할 것입니다.
++
+----
+{
+  "azure-cli": "2.77.0",
+  "azure-cli-core": "2.77.0",
+  "azure-cli-telemetry": "1.1.0",
+  "extensions": {}
+}
+----
+
+== RHEL 계열 Linux(RHEL, CentOS, Rocky Linux 등)에서 설치
+
+RHEL 계열의 Linux에서는 현재(2025년 9월) 설치 스크립트가 제공되지 않습니다. 아래 절차로 설치할 수 있습니다.

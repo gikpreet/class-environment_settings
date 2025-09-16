@@ -1,4 +1,5 @@
 = macOS에 Azure CLI 설치
+:toc:
 
 이 문서에서는 macOS에 Azure CLI(Command Line Interface)를 설치하는 방법을 설명합니다. 
 
@@ -62,7 +63,7 @@ brew install azure-cli
 +
 6. 설치가 완료되면 터미널을 종료합니다.
 
-=== 설치 확인
+== 설치 확인
 
 1. 터미널를 시작합니다.
 2. 아래 명령을 실행하여 설치된 Azure CLI 버전을 확인합니다.
