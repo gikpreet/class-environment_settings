@@ -1,4 +1,4 @@
-= macOD에 Ubuntu Linux 설치
+= macOS에 Ubuntu Linux 설치
 
 == UTM(Hypervisor) 설치
 
