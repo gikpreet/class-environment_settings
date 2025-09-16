@@ -1,0 +1,4 @@
+= macOS에 Azure CLI 설치
+
+이 문서에서는 macOS에 Azure CLI(Command Line Interface)를 설치하는 방법을 설명합니다. 
+
