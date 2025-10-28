@@ -1,0 +1,41 @@
+= macOS에서 Git 설치
+
+== 사전 환경 확인
+
+여기에서는 macOS에서 Visual Studio Code를 설치하기 위한 Homwbrew가 설치되어 있는지 확인합니다. 아래 절차에 따릅니다.
+
+1. 터미널을 실행합니다.
+2. 터미널에서 아래 명령을 실행하여 macOS 패키지 관리자인 homebrew가 설치되어 있는지 확인합니다.
++
+----
+brew -v
+----
++
+3. homebrew가 설치되어 있지 않으면 아래 명령을 실행하여 homebrew를 설치합니다.
++
+----
+% /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+----
++
+> 참고 위 명령이 동작하지 않으면 https://brew.sh/index_ko 에 방문하여 설치 스크립트를 얻어 실행합니다.
++
+4. 아래 명령을 실행하여 homebrew를 업데이트 합니다.
++
+----
+% brew update
+----
+
+== Git 설치
+
+1. 터미널에서, 아래 명령을 실행하여 Git을 실행합니다.
++
+----
+% brew install git
+----
++
+2. 아래 명령을 실행하여 설치된 git 버전을 확인합니다.
++
+----
+% git --version
+git versuib 2.39.5 (Apple Git-154)
+----

@@ -1,0 +1,15 @@
+= Ubuntu에서 Git 설치
+
+이 연습에서는 Ubuntu에 Git을 설치합니다. 아래 절차에 따릅니다.
+
+1. 아래 명령을 실행하여 APT를 업데이트 합니다.
++
+----
+sudo apt update
+----
++
+2. 아래 명령을 실행하여 Git을 설치합니다.
++
+----
+sudo apt install git
+----

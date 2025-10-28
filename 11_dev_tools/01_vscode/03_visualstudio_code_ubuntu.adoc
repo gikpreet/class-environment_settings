@@ -1,0 +1,34 @@
+= Ubuntu에서 Visual Studio Code 설치
+
+== 사전 설치 환경 구성
+
+여기에서는 Microsoft의 공식 apt 저장소를 설정합니다. 아래 절차에 따릅니다.
+
+1. 터미널을 실행합니다.
+2. 아래 명령을 실행하여 apt를 업데이트 하고 필요한 소프트웨어 패키지를 실행합니다.
++
+----
+sudo apt update
+sudo apt install software-properties-common apt-transport-https wget
+----
++
+3. 아래 명령을 실행하여 Microsoft APT 저장소를 추가하고 GPG 키를 가져옵니다.
++
+----
+wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
+sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
+----
++
+4. 아래 명령을 실행하여 APT 저장소를 업데이트 합니다.
++
+----
+sudo apt update
+----
+
+== Visual Studio Code 설치
+
+1. 터미널에서 아래 명령을 실행하여 Visual Studio Code를 설치합니다.
++
+----
+sudo apt install code
+----

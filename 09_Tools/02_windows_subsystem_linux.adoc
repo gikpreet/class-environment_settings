@@ -21,7 +21,7 @@ image:./images/image02.png[width=600]
 2. 아래 명령을 실행하여 wsl 설치를 시작합니다.
 +
 ----
-wsl -- install
+wsl --install
 ----
 +
 3. 시스템을 리부팅 합니다.
@@ -33,11 +33,26 @@ wsl --install
 5. Ubuntu의 기본 사용자를 지정합니다.
 +
 ----
+다운로드 중: Ubuntu
+설치 중: Ubuntu
+배포가 설치되었습니다. 'wsl.exe -d Ubuntu'을(를) 통해 시작할 수 있습니다.
+Ubuntu 시작하는 중...
+Provisioning the new WSL instance Ubuntu
+This might take a while...
 Create a default Unix user account:
 ----
 +
-6. 터미널을 종료합니다.
-
+6. 사용자의 패스워드를 입력합니다.
++
+----
+New password:
+Retype new password:
+passwd: password updated successfully
+To run a command as administrator (user "root"), use "sudo <command>".
+See "man sudo_root" for details.
+----
++
+7. 터미널을 종료합니다.
 
 == Ubuntu 실행
 
